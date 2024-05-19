@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Search Decrapify",
+  "description": "Show search results without AI crap",
+  "version": "1.1",
+  "homepage_url": "https://github.com/XYZ-Project",
+  "author": "Protik Islam-Jakobsson",
+  "icons": {
+    "16": "images/icon16.png",
+    "19": "images/icon19.png",
+    "48": "images/icon48.png",
+    "128": "images/icon128.png"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon16.png",
+      "19": "images/icon19.png",
+      "48": "images/icon48.png",
+      "128": "images/icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": [
+    "declarativeNetRequest",
+    "declarativeNetRequestWithHostAccess",
+    "activeTab"
+  ],
+  "host_permissions": [
+    "*://www.google.com/*"
+  ],
+  "offline_enabled": false,
+
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  }
+}			
